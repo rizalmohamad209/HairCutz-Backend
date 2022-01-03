@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-sqlalchemy = "*"
+flask-marshmallow = "*"
+marshmallow-sqlalchemy = "*"
+python-dotenv = "*"
+numpy = "*"
+pillow = "*"
+gunicorn = "*"
+cloudinary = "*"
+flask-jwt-extended = "*"
+flask-cors = "*"
+tensorflow-cpu = "==2.3.3"
+mtcnn = "*"
+psycopg2-binary = "*"
+nltk = "*"
+waitress = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

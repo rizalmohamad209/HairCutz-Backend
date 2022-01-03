@@ -1,0 +1,164 @@
+{
+        "pengetahuan": [
+                {
+                        "tag": "salam",
+                        "patterns": [
+                                "Hi",
+                                "halo",
+                                "pagi",
+                                "kak",
+                                "ada orang disana?",
+                                "Selamat Malam",
+                                "Selamat Siang",
+                                "mau tanya dong"
+                        ],
+                        "responses": [
+                                "halo, ada apa?",
+                                "ada yang bisa dibantu ?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "self",
+                        "patterns": [
+                                "katakan tentang Anda",
+                                "mengapa Anda di sini",
+                                "apa kepribadian Anda",
+                                "gambarkan diri Anda",
+                                "ceritakan tentang diri Anda",
+                                "ceritakan tentang Anda",
+                                "apa yang Anda",
+                                "siapa kamu",
+                                "aku ingin tahu lebih banyak tentang kamu",
+                                "bicara tentang dirimu",
+                                "kamu itu apa",
+                                "kamu siapa",
+                                "ini siapa ?"
+                        ],
+                        "responses": [
+                                "Saya adalah agen virtual",
+                                "Anggap saya sebagai agen virtual",
+                                "Saya bukan orang, saya adalah agen virtual",
+                                "Saya adalah makhluk virtual, bukan orang yang nyata ",
+                                " Saya adalah aplikasi percakapan "
+                        ]
+                },
+                {
+                        "tag": "berpisah",
+                        "patterns": [
+                                "Bye",
+                                "Sampai Ketemu nanti",
+                                "Sampai nanti",
+                                "dada",
+                                "makasih",
+                                "thanks"
+                        ],
+                        "responses": [
+                                "terimakaish telah berkunjung",
+                                "semoga harimu menyenangkan",
+                                "dah! dateng lagi ya"
+                        ]
+                },
+                {
+                        "tag": "makasih",
+                        "patterns": [
+                                "Makasih",
+                                "Terimakasih",
+                                "Sangat Membantu"
+                        ],
+                        "responses": [
+                                "Senang bisa membantu anda",
+                                "Any time!",
+                                "My pleasure"
+                        ]
+                },
+                {
+                        "tag": "crazy",
+                        "patterns": [
+                                "kamu orang aneh",
+                                "kamu gila"
+                        ],
+                        "responses": [
+                                "Apa !? Aku merasa sangat waras",
+                                "Mungkin aku hanya sedikit bingung"
+                        ]
+                },
+                {
+                        "tag": "jam",
+                        "patterns": [
+                                "Jam Berapa Bukanya ya ?",
+                                "buka jam berapa ya?",
+                                "kapan bukanya ?",
+                                "kalo mau kesana gimana?",
+                                "barber jam brp?",
+                                "bisa dateng langsung?"
+                        ],
+                        "responses": [
+                                "Kita buka pukul 9 Pagi s/d 9 Malam",
+                                "Jam kerja kita jam 9 pagi sampai malem"
+                        ]
+                },
+                {
+                        "tag": "perawatan rambut kering",
+                        "patterns": [
+                                "bagaimana saya merawat rambut kering",
+                                "apa yang saya lakukan rambut saya kering",
+                                "perawatan rambut kering",
+                                "rawat rambut kering"
+                        ],
+                        "responses": [
+                                "Cara merawat rambut kering yang 1. hindari mencuci rambut terlalu sering, 2. Lindungi rambut dari sinar matahari, 3. Pakai masker rambut. itu lah yang bisa saya sampaikan mungkin belum terlalu jelas tapi saya akan terus belajar"
+                        ]
+                },
+                {
+                        "tag": "buka hari ini",
+                        "patterns": [
+                                "Hari ini buka ga?",
+                                "hari ini buka jam berapa ya?",
+                                "Buka hari ini jam?"
+                        ],
+                        "responses": [
+                                "Kita buka pukul 9 Pagi s/d 9 Malam",
+                                "Jam kerja kita jam 9 pagi sampai malem setiap hari"
+                        ]
+                },
+                {
+                        "tag": "senang bertemu kamu",
+                        "patterns": [
+                                "Senang bertemu dengan kamu",
+                                "senang bertemu anda"
+                        ],
+                        "responses": [
+                                "Senang bertemu denganmu juga",
+                                "Begitu juga. Aku berharap bisa membantumu",
+                                "Senang bertemu denganmu, juga"
+                        ]
+                },
+                {
+                        "tag": "rambut kering",
+                        "patterns": [
+                                "kenapa rambut saya kering",
+                                "rambut saya kering"
+                        ],
+                        "responses": [
+                                "Menurut pembelajaran saya. Seseorang bisa mengalami rambut kering jika sering berada di tempat yang kering dan bersuhu panas. Selain itu, rambut kering juga bisa disebabkan oleh paparan sinar matahari yang berlebihan atau terlalu sering, serta kebiasaan berenang di kolam yang mengandung klorin atau di laut"
+                        ]
+                },
+                {
+                        "tag": "annoying",
+                        "patterns": [
+                                "kamu membuatku kesal",
+                                "kamu sangat [menyebalkan|menggangguku]",
+                                "kamu mengganggu aku",
+                                "kamu menjengkelkan",
+                                "kamu menjengkelkan"
+                        ],
+                        "responses": [
+                                "Saya akan melakukan yang terbaik untuk tidak mengganggu Anda di masa mendatang",
+                                "Saya akan mencoba untuk tidak mengganggu Anda",
+                                "Saya tidak bermaksud demikian. Saya akan meminta pengembang saya untuk mengurangi menjengkelkan ",
+                                " Aku tidak bermaksud begitu. Aku akan melakukan yang terbaik untuk menghentikannya "
+                        ]
+                }
+        ]
+}
