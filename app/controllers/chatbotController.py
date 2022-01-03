@@ -112,6 +112,6 @@ def chatbot(payload):
 
 def getChat(payload):
     allChat = Chat.query.filter(or_(Chat.sender == payload.get(
-        'id'), Chat.receiver == payload.get('id'))).all()
+        'id_user'), Chat.receiver == payload.get('id_user'))).all()
     result = chatsSchema.dump(allChat)
     return jsonify({"msg": "Success Get all berita", "status": 200, "data": result})

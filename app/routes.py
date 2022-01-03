@@ -65,6 +65,7 @@ def updateStatus(id):
 
 
 @app.route('/predict', methods=['POST'])
+@jwt_required()
 def prediksi():
     return recomendationsController.predict()
 
