@@ -74,6 +74,8 @@ def recomendations():
     return recomendationsController.postRecomendations()
 
 
+# test
+
 @app.route('/chatbot', methods=['POST', 'GET'])
 @jwt_required()
 def chatsbot():
