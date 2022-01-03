@@ -9,10 +9,10 @@ class Users(db.Model):
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.Text)
     no_hp = db.Column(db.String(16))
-    gender = db.Column(db.Enum('male', 'female'),
-                       name='gender_type')
-    role = db.Column(db.Enum('user', 'admin', 'adminMitra'),
-                     nullable=False, server_default='user', name='role_type')
+    gender = db.Column(db.Enum('male', 'female',
+                       name='gender_type'))
+    role = db.Column(db.Enum('user', 'admin', 'adminMitra',
+                     nullable=False, server_default='user', name='role_type'))
 
     def __init__(self, nama_user, username, email, no_hp, gender, role):
         self.nama_user = nama_user
