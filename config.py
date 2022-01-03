@@ -9,8 +9,8 @@ class Config(object):
     USERNAME = "root"
     PASSWORD = "Rizalmohamad123"
     JWT_SECRET_KEY = str(os.environ.get("JWT_SECRET"))
-    SQLALCHEMY_DATABASE_URI = 'mysql://'+USERNAME+':'+PASSWORD+'@'+HOST+'/'+DATABASE
-    #SQLALCHEMY_DATABASE_URI = 'postgresql://tnapfpqvoynmwg:554a1ee3d9e138f45a4f91a69828bc30e4a43ae2cf26f036f45bd72847f40228@ec2-3-95-130-249.compute-1.amazonaws.com:5432/d2sgqnt1p1t3lp'
+    #SQLALCHEMY_DATABASE_URI = 'mysql://'+USERNAME+':'+PASSWORD+'@'+HOST+'/'+DATABASE
+    SQLALCHEMY_DATABASE_URI = 'postgresql://keyhjbritoyqcj:804aadb24179eb9cbee788f80dea8929dd5d41030c271942fefb01f488d35ec4@ec2-35-173-83-57.compute-1.amazonaws.com:5432/dek1mr5jkf2kj9'
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
