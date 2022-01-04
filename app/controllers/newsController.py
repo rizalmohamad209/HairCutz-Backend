@@ -45,7 +45,7 @@ def postNews():
         image = upload_result["secure_url"]
     else:
         error[fileImage.filename] = 'File type is not allowed'
-    newNews = News(mitra_id, image, title, content)
+    newNews = News(mitra_id, title, image, content)
     db.session.add(newNews)
     db.session.commit()
     new = beritaSchema.dump(newNews)
