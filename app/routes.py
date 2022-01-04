@@ -65,6 +65,13 @@ def updateStatus():
         return bookingController.getBookingByMitra(payload_user)
 
 
+@app.route('/antrian/<id>', methods=["GET"])
+@jwt_required()
+def antrian(id):
+    if(request.method == 'GET'):
+        return bookingController.getBookingByMitraForUser(id)
+
+
 @app.route('/predict', methods=['POST'])
 @jwt_required()
 def prediksi():
