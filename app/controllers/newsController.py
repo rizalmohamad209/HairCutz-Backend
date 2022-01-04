@@ -9,7 +9,7 @@ ma = Marshmallow(app)
 
 class BeritaSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'image', 'title', 'content', 'mitra_id')
+        fields = ('id_news', 'image', 'title', 'content', 'mitra_id')
 
 
 # init schema
