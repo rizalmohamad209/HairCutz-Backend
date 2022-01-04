@@ -55,13 +55,14 @@ def booking():
         return bookingController.getHistoryBooking(payload_user)
 
 
-@app.route('/bookMitra/<id>', methods=['PUT', 'GET'])
+@app.route('/bookMitra', methods=['PUT', 'GET'])
 @jwt_required()
-def updateStatus(id):
+def updateStatus():
+    payload_user = get_jwt_identity()
     if(request.method == 'PUT'):
-        return bookingController.updateBookingStatus(id)
+        return bookingController.updateBookingStatus(payload_user)
     elif(request.method == 'GET'):
-        return bookingController.getBookingByMitra(id)
+        return bookingController.getBookingByMitra(payload_user)
 
 
 @app.route('/predict', methods=['POST'])

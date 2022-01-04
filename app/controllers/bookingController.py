@@ -3,6 +3,8 @@ from datetime import date, datetime
 from sqlalchemy.sql.expression import and_
 from app import app
 from flask import request, jsonify
+from app.models.mitraModel import Mitra
+from app.models.userModel import Users
 from flask_marshmallow import Marshmallow
 from app.models.bookingModel import db, Booking
 
@@ -11,7 +13,8 @@ ma = Marshmallow(app)
 
 class BookingSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'no_urut', 'id_mitra', 'id_user', 'date', 'status')
+        fields = ('id', 'no_urut', 'id_mitra', 'id_user',
+                  'date', 'status', 'nama_user', 'nama_mitra', 'alamat_mitra')
 
 
 # init schema
@@ -45,8 +48,14 @@ def updateBookingStatus(id):
     return jsonify({"msg": "Success update status", "status": 200, "data": result})
 
 
-def getBookingByMitra(id):
-    book = Booking.query.filter(Booking.id_mitra == id).all()
+def getBookingByMitra(token):
+    print(token)
+    # book = Booking.query.join(Users, Booking.id_user == Users.id_user).filter(
+    #     Booking.id_mitra == token.get('id_mitra')).all()
+    book = db.session.query(Booking.date, Booking.no_urut, Booking.id, Booking.id_mitra, Users.nama_user, Mitra.nama_mitra, Mitra.alamat_mitra).join(
+        Users, Users.id_user == Booking.id_user).join(Mitra, Mitra.id_mitra == Booking.id_mitra).filter(
+            Booking.id_mitra == token.get('id_mitra')).all()
+    # print(book)
     result = bookingsSchema.dump(book)
     return jsonify({"msg": "Success get booking by mitra", "status": 200, "data": result})
 

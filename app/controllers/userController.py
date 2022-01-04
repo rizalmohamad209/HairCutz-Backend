@@ -2,6 +2,7 @@ from app import app
 from flask import request, jsonify
 from flask_marshmallow import Marshmallow
 from app.models.userModel import db, Users
+from app.models.mitraModel import db, Mitra
 from flask_jwt_extended import *
 import datetime
 from flask import request
@@ -69,7 +70,16 @@ def signIn():
     username = request.form['username']
     password = request.form['password']
 
+    id_mitra = db.session.query(Users, Mitra.id_mitra).outerjoin(
+        Mitra, Users.id_user == Mitra.user_id).filter(Users.username == username).first()
+    print(id_mitra[1])
+    # for result in user:
+    #     if result[1]:
+    #         print('NAMA:{} ID_MITRA:{}'.format(
+    #             result[0].nama_user, result[1].id_mitra))
+
     user = Users.query.filter_by(username=username).first()
+
     if not user:
         return jsonify("User not found")
 
@@ -79,7 +89,7 @@ def signIn():
             "msg": "Login Invalid",
             "error": "wrong password"
         })
-    data = singleTransform(user)
+    data = singleTransform(user, id_mitra)
     expires = datetime.timedelta(days=1)
     expires_refresh = datetime.timedelta(days=3)
     access_token = create_access_token(data, fresh=True, expires_delta=expires)
@@ -101,7 +111,7 @@ def refresh():
     }, "")
 
 
-def singleTransform(users):
+def singleTransform(users, id_mitra):
     return{
         'id_user': users.id_user,
         'nama_user': users.nama_user,
@@ -109,5 +119,6 @@ def singleTransform(users):
         'email': users.email,
         'no_hp': users.no_hp,
         'role': users.role,
-        'gender': users.gender
+        'gender': users.gender,
+        'id_mitra': id_mitra[1]
     }

@@ -1,12 +1,14 @@
 from app import db
 from sqlalchemy.sql import func
 
+from app.models.userModel import Users
+
 
 class Booking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     no_urut = db.Column(db.Integer)
     id_mitra = db.Column(db.Integer)
-    id_user = db.Column(db.Integer)
+    id_user = db.Column(db.Integer, db.ForeignKey(Users.id_user))
     date = db.Column(db.Date)
     status = db.Column(db.String(100))
 

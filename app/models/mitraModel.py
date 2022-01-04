@@ -1,4 +1,6 @@
 from app import db
+from app.models.userModel import Users
+from sqlalchemy import ForeignKey
 
 
 class Mitra(db.Model):
@@ -9,7 +11,7 @@ class Mitra(db.Model):
     alamat_mitra = db.Column(db.Text)
     image = db.Column(db.String(200))
     jmlh_tukangCukur = db.Column(db.Integer)
-    user_id = db.Column(db.Integer)
+    user_id = db.Column(db.Integer, ForeignKey(Users.id_user))
 
     def __init__(self, nama_mitra, lat, long, alamat_mitra, image, jmlh_tukangCukur, user_id, ):
         self.nama_mitra = nama_mitra
