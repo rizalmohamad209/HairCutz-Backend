@@ -187,10 +187,10 @@ def predict():
 def postRecomendations():
     bentuk = request.form['bentuk']
     image = request.form['image']
-    score = request.form['score']
+    gender = request.form['gender']
     panjangrambut = request.form['panjangrambut']
 
-    newRecomendations = Recomendations(bentuk, image, score, panjangrambut)
+    newRecomendations = Recomendations(bentuk, image, gender, panjangrambut)
     db.session.add(newRecomendations)
     db.session.commit()
     new = rekomens_schema.dump(newRecomendations)
