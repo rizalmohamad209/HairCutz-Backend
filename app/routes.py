@@ -1,7 +1,7 @@
 from app import app
 from flask import request
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from app.controllers import bookingController, mitraController, userController, chatbotController, recomendationsController
+from app.controllers import bookingController, mitraController, newsController, userController, chatbotController, recomendationsController
 
 
 @app.route('/user', methods=['GET', 'PUT'])
@@ -93,3 +93,23 @@ def chatsbot():
         return chatbotController.chatbot(payload)
     elif(request.method == 'GET'):
         return chatbotController.getChat(payload)
+
+
+@app.route('/news', methods=['POST', 'GET'])
+@jwt_required()
+def newsRoute():
+    if(request.method == 'POST'):
+        return newsController.postNews()
+    if(request.method == 'GET'):
+        return newsController.getAllNews()
+
+
+@app.route('/news/<id>', methods=['GET', 'PUT', 'DELETE'])
+@jwt_required()
+def newsRouteById(id):
+    if(request.method == 'GET'):
+        return newsController.getNewsById(id)
+    if(request.method == 'PUT'):
+        return newsController.updateNews(id)
+    if(request.method == 'DELETE'):
+        return newsController.deleteNews(id)
