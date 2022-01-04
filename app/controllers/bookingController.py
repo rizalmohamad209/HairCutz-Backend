@@ -61,7 +61,8 @@ def getBookingByMitra(token):
 
 
 def getHistoryBooking(decodeToken):
-    book = Booking.query.filter(
+    book = db.session.query(Booking.date, Booking.no_urut, Booking.id, Booking.id_mitra, Users.nama_user, Mitra.nama_mitra, Mitra.alamat_mitra).join(
+        Users, Users.id_user == Booking.id_user).join(Mitra, Mitra.id_mitra == Booking.id_mitra).filter(
         Booking.id_user == decodeToken.get('id_user')).all()
     result = bookingsSchema.dump(book)
     return jsonify({"msg": "Success get booking by user", "status": 200, "data": result})
