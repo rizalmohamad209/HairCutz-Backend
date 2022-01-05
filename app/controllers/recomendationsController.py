@@ -173,7 +173,7 @@ def predict():
         #     "app/static/image/"+filename)
         # print(image)
         output = predict_face_shape(image)
-        rekomen = Recomendations.query.with_entities(Recomendations.image, Recomendations.bentuk).filter(
+        rekomen = Recomendations.query.with_entities(Recomendations.image, Recomendations.bentuk, Recomendations.gender, Recomendations.panjangrambut).filter(
             Recomendations.bentuk == output).filter(Recomendations.panjangrambut == panjangrambut).filter(Recomendations.gender == gender)
         result = rekomen_schema.dump(rekomen)
         return jsonify({
