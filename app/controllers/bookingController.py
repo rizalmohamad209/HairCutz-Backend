@@ -53,7 +53,7 @@ def getBookingByMitra(token):
     print(token)
     # book = Booking.query.join(Users, Booking.id_user == Users.id_user).filter(
     #     Booking.id_mitra == token.get('id_mitra')).all()
-    book = db.session.query(Booking.date, Booking.no_urut, Booking.id, Booking.id_mitra, Users.nama_user, Mitra.nama_mitra, Mitra.alamat_mitra).join(
+    book = db.session.query(Booking.date, Booking.status, Booking.no_urut, Booking.id, Booking.id_mitra, Users.nama_user, Mitra.nama_mitra, Mitra.alamat_mitra).join(
         Users, Users.id_user == Booking.id_user).join(Mitra, Mitra.id_mitra == Booking.id_mitra).filter(
             Booking.id_mitra == token.get('id_mitra')).all()
     # print(book)
