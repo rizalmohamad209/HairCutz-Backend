@@ -40,8 +40,9 @@ def postBooking(decodeToken):
 
 
 def updateBookingStatus(id):
-    status = request.form['status']
+
     booking = Booking.query.get(id)
+    status = request.form['status']
     booking.status = status
     db.session.commit()
     result = bookingSchema.dump(booking)
