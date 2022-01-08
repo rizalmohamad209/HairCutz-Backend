@@ -117,6 +117,14 @@ def getMitraById(id):
     return jsonify({"msg": "Success get mitra by id", "status": 200, "data": mitraDetails})
 
 
+def getMitraDetails(decode):
+    print(decode.get("id_mitra"))
+    mitra = Mitra.query.get(decode.get("id_mitra"))
+    print(mitra)
+    mitraDetails = mitraSchema.dump(mitra)
+    return jsonify({"msg": "Success get mitra by id", "status": 200, "data": mitraDetails})
+
+
 def deleteMitra(id):
     mitra = Mitra.query.get(id)
     db.session.delete(mitra)

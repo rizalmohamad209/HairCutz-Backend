@@ -84,11 +84,13 @@ def signIn():
         return jsonify("User not found")
 
     if not user.checkPassword(password):
-        return jsonify({
+        resp = jsonify({
             "status": 401,
             "msg": "Login Invalid",
             "error": "wrong password"
         })
+        resp.status_code = 500
+        return resp
     data = singleTransform(user, id_mitra)
     expires = datetime.timedelta(days=1)
     expires_refresh = datetime.timedelta(days=3)

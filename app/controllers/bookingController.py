@@ -27,6 +27,7 @@ def postBooking(decodeToken):
     status = request.form['status']
     id_user = decodeToken.get('id_user')
     tgl = date.today()
+    print(tgl)
 
     allBerita = Booking.query.filter(
         and_(Booking.id_mitra == id_mitra, Booking.date == tgl

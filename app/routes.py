@@ -36,6 +36,13 @@ def mitra():
         return mitraController.getAllMitra()
 
 
+@app.route('/mitraDetails', methods=["GET"])
+@jwt_required()
+def mitraDetails():
+    payload_user = get_jwt_identity()
+    return mitraController.getMitraDetails(payload_user)
+
+
 @app.route('/mitra/<id>', methods=['GET', 'DELETE'])
 @jwt_required()
 def mitraById(id):
