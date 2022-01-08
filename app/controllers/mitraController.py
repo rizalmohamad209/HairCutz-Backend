@@ -60,13 +60,11 @@ def postMitra():
 
 def updateMitra(decodeToken):
     ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
-    decode = decodeToken
-    print(decode.get('id_user'))
 
     def allowed_file(filename):
         return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-    mitra = Mitra.query.filter(Mitra.user_id == decode.get('id_user'))
-    print(mitra)
+    mitra = Mitra.query.get(decodeToken.get("id_mitra"))
+
     nama_mitra = request.form['nama_mitra']
     alamat_mitra = request.form['alamat_mitra']
     lat = request.form['lat']
